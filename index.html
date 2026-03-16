@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DreamAtlas · AI 梦境地图</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="nebula nebula-a"></div>
+    <div class="nebula nebula-b"></div>
+
+    <header class="hud">
+      <h1>DreamAtlas<span>AI 梦境地图</span></h1>
+      <div class="hud-stats">
+        <span>梦境种子: <strong id="dream-seed">DREAM-0726</strong></span>
+        <span>已收集碎片: <strong id="shard-count">0/3</strong></span>
+      </div>
+    </header>
+
+    <main class="viewport" id="viewport">
+      <section class="map" id="map" aria-label="梦境地图">
+        <button class="zone" data-zone="rain" style="left: 18%; top: 35%">
+          <span class="zone-title">雨城</span>
+          <span class="zone-sub">Melancholy Rain City</span>
+        </button>
+        <button class="zone" data-zone="lava" style="left: 42%; top: 62%">
+          <span class="zone-title">熔岩庭园</span>
+          <span class="zone-sub">Lava Garden</span>
+        </button>
+        <button class="zone" data-zone="ice" style="left: 68%; top: 30%">
+          <span class="zone-title">静海冰原</span>
+          <span class="zone-sub">Silent Ice Field</span>
+        </button>
+        <button class="zone" data-zone="spire" style="left: 58%; top: 50%">
+          <span class="zone-title">塔影之都</span>
+          <span class="zone-sub">Neon Spire</span>
+        </button>
+        <button class="zone" data-zone="sky" style="left: 30%; top: 20%">
+          <span class="zone-title">云上神殿</span>
+          <span class="zone-sub">Sky Shrine</span>
+        </button>
+      </section>
+
+      <aside class="panel" id="panel" aria-live="polite">
+        <div class="panel-head">
+          <h2 id="zone-name">选择一个梦境区域</h2>
+          <button id="reset-view" class="ghost">返回全图</button>
+        </div>
+        <p id="zone-desc">拖拽探索地图，滚轮缩放，点击任意区域进入梦境。</p>
+
+        <div class="tasks">
+          <h3>当前任务</h3>
+          <ul id="task-list"></ul>
+          <button id="collect-btn" class="collect-btn" disabled>收集记忆碎片</button>
+        </div>
+
+        <div class="narrator">
+          <h3>AI 旁白</h3>
+          <p id="narration">你站在意识海的边缘。每次选择，都会改变世界颜色。</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="tips">交互提示：拖拽平移 · 滚轮缩放 · 点击区域飞入 · 按 ESC 返回</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
